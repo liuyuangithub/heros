@@ -7,6 +7,11 @@ import './assets/css/index.css'
 // 导入路由
 import router from './routers/router'
 
+// 导入axios组件
+import axios from '../plugins/MyAxios'
+
+Vue.use(axios)
+
 new Vue({
   el: '#app',
   render: h => h(App),

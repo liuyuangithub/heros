@@ -33,8 +33,6 @@
 </template>
 
 <script>
-// 导入axios模块
-import axios from "axios";
 export default {
   data() {
     return {
@@ -46,7 +44,7 @@ export default {
   },
   methods: {
     handleGetData() {
-      axios.get("http://localhost:3000/heroes").then(res => {
+      this.$http.get("/heroes").then(res => {
         console.log(res);
         const { status, data } = res;
         if (status === 200) {
@@ -59,7 +57,7 @@ export default {
         return;
       }
       //  `http://localhost:3000/heroes/${id}`
-      axios.delete("http://localhost:3000/heroes/" + id).then(res => {
+      this.$http.delete("/heroes/" + id).then(res => {
         // console.log(res);
         if (res.status === 200) {
           this.handleGetData();

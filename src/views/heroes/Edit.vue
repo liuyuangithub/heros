@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   data() {
     return {
@@ -33,8 +32,8 @@ export default {
   },
   methods: {
     handleAddList() {
-      axios
-        .get(`http://localhost:3000/heroes/${this.paramsId}`)
+      this.$http
+        .get(`/heroes/${this.paramsId}`)
         .then(res => {
           if (res.status === 200) {
             this.FormData = res.data;
@@ -43,8 +42,8 @@ export default {
         .catch(err => console.log(err));
     },
     handleEdit() {
-      axios
-        .put(`http://localhost:3000/heroes/${this.paramsId}`, this.FormData)
+      this.$http
+        .put(`/heroes/${this.paramsId}`, this.FormData)
         .then(res => {
           const { data, status } = res;
           if (status === 200) {
