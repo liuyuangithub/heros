@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import AppHeader from "./components/header";
-import SideBar from "./components/sidebar";
+import AppHeader from "./components/Header";
+import SideBar from "./components/Sidebar";
 // views文件夹放和路由相关的组件
 export default {
   name: "app",
